@@ -1,5 +1,5 @@
 import { createLibp2p } from 'libp2p'
-import { websockets } from '@libp2p/websockets'
+import { webSockets } from '@libp2p/websockets'
 import { noise } from '@chainsafe/libp2p-noise'
 import { yamux } from '@chainsafe/libp2p-yamux'
 import { identify } from '@libp2p/identify'
@@ -12,7 +12,7 @@ async function main() {
     addresses: {
       listen: [`/ip4/0.0.0.0/tcp/${port}/ws`]
     },
-    transports: [websockets()],
+    transports: [webSockets()],
     connectionEncryption: [noise()],
     streamMuxers: [yamux()],
     services: {
